@@ -1,0 +1,36 @@
+/* TAG */
+
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+/* CLASS */
+
+.container{
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.row::after{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.row{
+  text-align: center;
+  line-height: 200px;
+}
+
+.row [class*="col-"]{background-color: pink}
+
+.row .row{
+  padding: 5px;
+}
+
+.row .row [class*="col-"]{
+  border: 1px solid white;
+  background-color: red;
+}
