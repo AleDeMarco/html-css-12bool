@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: black;
+}
+
 /* CLASS */
 .container{
   width: 1170px;
@@ -18,7 +22,7 @@
 }
 
 .wall{
-  background-color: blue;
+  border: 5px solid blue;
 }
 
 .wall-t{
@@ -35,4 +39,94 @@
 
 .wall-b{
   border-bottom: 5px solid blue;
+}
+
+.door-t{
+  border-top: 3px solid white;
+}
+
+.door-b{
+  border-bottom: 3px solid white;
+}
+
+.point, .bigpoint, .monster{
+  position: relative;
+}
+
+.point img{
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: disco;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: disco;
+}
+
+@-webkit-keyframes disco {
+  0%    { -webkit-filter: drop-shadow(0 0 5px rgba(255,153,153,1)); }
+  25%  { -webkit-filter: drop-shadow(0 0 5px rgba(244,241,66,1)); }
+  50%  { -webkit-filter: drop-shadow(0 0 5px rgba(0,153,255,1)); }
+  75%  { -webkit-filter: drop-shadow(0 0 5px rgba(244,66,232,1)); }
+  100%    { -webkit-filter: drop-shadow(0 0 5px rgba(255,153,153,1)); }
+
+}
+
+.bigpoint img{
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-name: disco;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-name: bigdisco;
+}
+
+@-webkit-keyframes bigdisco {
+  0%    { -webkit-filter: drop-shadow(0 0 5px rgba(255,153,153,1)); }
+  25%  { -webkit-filter: drop-shadow(0 0 5px rgba(244,241,66,1)); }
+  50%  { -webkit-filter: drop-shadow(0 0 5px rgba(0,153,255,1)); }
+  75%  { -webkit-filter: drop-shadow(0 0 5px rgba(244,66,232,1)); }
+  100%    { -webkit-filter: drop-shadow(0 0 5px rgba(255,153,153,1)); }
+}
+
+.monster img{
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wall:hover, .monster:hover{
+  cursor: url("https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/mozilla/36/cross-mark_274c.png") 60 60, auto;
+}
+
+/* ID */
+[id^=g]:hover img{
+  display: none;
+}
+
+[id^=g]:hover{
+background-repeat: no-repeat;
+background-size: 100%;
+background-image: url(../img/pacman-gif.gif) !important;
+}
+
+[id^=i]:hover{
+background-repeat: no-repeat;
+background-size: 100%;
+background-image: url(../img/pacman-img.png) !important;
 }
